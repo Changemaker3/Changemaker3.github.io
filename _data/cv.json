@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Jinghao Jin",
+    "email": "34520222200952@stu.xmu.edu.cn",  
+    "phone": "+8618613552324",
+    "website": "https://changemaker3.github.io/",
+    "summary": "A student majored in Physics in Xiamen University.",  
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": "Xiamen University Student Apartment, Zengcuo'an West Road, Siming District",  
+      "postalCode": "361001",
+      "city": "Xiamen",
+      "countryCode": "CN",  
+      "region": "Fujian province"       
     },
     "profiles": [
       {
@@ -25,34 +25,34 @@
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "Changemaker3",  
+        "url": "https://github.com/Changemaker3"
       }
     ]
   },
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Xiamen University",  
+      "area": "B.S. in Theoretical Physics",    
+      "studyType": "All-day",  
+      "startDate": "2022",
+      "endDate": "2026",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "Fudan University",  
+      "area": "Ph.D in Theoretical Condense-matter Physics",        
+      "studyType": "All day",
+      "startDate": "2026",
+      "endDate": "",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
+      "institution": "",
+      "area": "",
       "studyType": "",
       "startDate": "",
       "endDate": "2012",
