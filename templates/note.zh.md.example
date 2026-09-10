@@ -1,0 +1,12 @@
+---
+layout: academic-entry
+title: 笔记标题
+description: 笔记的简短介绍。
+date: 2026-09-10
+lang: zh
+section: notes
+permalink: /zh/notes/your-note/
+alternate_url: /notes/your-note/
+---
+
+在这里用 Markdown 撰写中文笔记。支持行内公式 $E = mc^2$ 和独立公式。

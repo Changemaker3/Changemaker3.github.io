@@ -1,0 +1,31 @@
+<!doctype html>
+{% assign locale = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[locale] %}
+<html lang="{% if locale == 'zh' %}zh-CN{% else %}en{% endif %}">
+  <head>
+    {% include head.liquid %}
+    <link rel="stylesheet" href="{{ '/assets/css/personal.css' | relative_url }}">
+    {% if page.alternate_url %}
+      <link rel="alternate" hreflang="{% if locale == 'zh' %}en{% else %}zh-CN{% endif %}" href="{{ page.alternate_url | absolute_url }}">
+      <link rel="alternate" hreflang="{% if locale == 'zh' %}zh-CN{% else %}en{% endif %}" href="{{ page.url | absolute_url }}">
+    {% endif %}
+  </head>
+  <body class="personal-site sticky-bottom-footer">
+    <a class="skip-link" href="#main-content">{{ t.skip }}</a>
+    {% include personal/header.liquid %}
+    <main id="main-content" class="container personal-main">{{ content }}</main>
+    <footer class="personal-footer">
+      <div class="container footer-inner">
+        <span
+          >&copy; {{ site.time | date: '%Y' }}
+          {{ site.data.profile.site_name -}}
+        </span>
+        <span>
+          {{- t.footer }}
+          <a href="https://github.com/alshedivat/al-folio">al-folio</a> · <a href="https://jekyllrb.com/">Jekyll</a></span
+        >
+      </div>
+    </footer>
+    {% include scripts.liquid %}
+  </body>
+</html>

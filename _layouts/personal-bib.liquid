@@ -1,0 +1,63 @@
+---
+---
+{% assign locale = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[locale] %}
+<div class="publication-entry" id="{{ entry.key }}">
+  <div class="publication-status">
+    {% if entry.journal %}{{ entry.abbr | default: entry.journal }}{% else %}{{ t.preprint }}{% endif %}
+  </div>
+  <div class="publication-body">
+    <h3 class="publication-title">
+      {% if entry.arxiv -%}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}">{{ entry.title }}</a>
+      {%- else -%}
+        {{- entry.title -}}
+      {%- endif %}
+    </h3>
+    <div class="publication-authors">
+      {% for author in entry.author_array -%}
+        {%- unless forloop.first %}, {% endunless -%}
+        {%- if site.scholar.last_name contains author.last and site.scholar.first_name contains author.first -%}
+          <strong>
+            {{- author.first }}
+            {{ author.last -}}
+          </strong>
+        {%- else -%}
+          {{- author.first }}
+          {{ author.last -}}
+        {%- endif -%}
+      {%- endfor %}
+    </div>
+    <p class="entry-meta">
+      {% if entry.journal -%}
+        {{- entry.abbr | default: entry.journal }}
+        {{ entry.number }} ({{ entry.year }}), {{ entry.pages }} ·
+      {% endif %}
+      {% if entry.arxiv %}arXiv:{{ entry.arxiv }} · {% endif -%}
+      {{- entry.year }}
+    </p>
+    <div class="entry-links">
+      {% if entry.doi -%}
+        <a href="https://doi.org/{{ entry.doi }}">DOI</a>
+      {%- endif %}
+      {% if entry.arxiv -%}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>
+      {%- endif %}
+      {% if entry.pdf -%}
+        <a href="{{ entry.pdf | relative_url }}">PDF</a>
+      {%- endif %}
+      {% if entry.html -%}
+        <a href="{{ entry.html }}">INSPIRE</a>
+      {%- endif %}
+      {% if entry.code -%}
+        <a href="{{ entry.code }}">
+          {%- if locale == 'zh' %}代码{% else %}Code{% endif -%}
+        </a>
+      {%- endif %}
+    </div>
+    <details class="citation">
+      <summary>BibTeX</summary>
+      <pre><code>{{ entry.bibtex | hideCustomBibtex | escape }}</code></pre>
+    </details>
+  </div>
+</div>

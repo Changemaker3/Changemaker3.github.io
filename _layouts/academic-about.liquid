@@ -1,0 +1,78 @@
+---
+layout: academic
+---
+{% assign locale = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[locale] %}
+{% assign profile = site.data.profile %}
+{% assign bio = profile[locale] %}
+<article class="post personal-about">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if locale == 'zh' and profile.name_zh != '' -%}
+        {{- profile.name_zh }}
+        <span class="name-roman">{{ profile.name }}</span>
+      {%- else -%}
+        <strong>Jinghao</strong> Jin
+      {%- endif %}
+    </h1>
+    {% if bio.role != '' or bio.affiliation != '' %}
+      <p class="desc">
+        {{ bio.role -}}
+        {%- if bio.role != '' and bio.affiliation != '' %} · {% endif -%}
+        {%- if bio.affiliation_url != '' -%}
+          <a href="{{ bio.affiliation_url }}">{{ bio.affiliation }}</a>
+        {%- else -%}
+          {{- bio.affiliation -}}
+        {%- endif %}
+      </p>
+    {% else %}
+      <p class="desc">{{ t.introduction }}</p>
+    {% endif %}
+  </header>
+  <div class="about-body">
+    {% if profile.photo != '' %}
+      <figure class="profile-portrait"><img src="{{ profile.photo | relative_url }}" alt="{{ profile.name }}" width="280" height="320"></figure>
+    {% endif %}
+    <div class="biography">
+      {% if bio.biography != '' -%}
+        {{- bio.biography | markdownify -}}
+      {%- else %}
+        <p>{{ t.welcome }}</p>
+      {% endif %}
+    </div>
+    {% if bio.research_interests.size > 0 %}
+      <section class="research-interests">
+        <h2>{{ t.research }}</h2>
+        <ul>
+          {% for interest in bio.research_interests %}
+            <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+    {% if profile.email != '' or profile.links.size > 0 or profile.cv != '' %}
+      <section class="personal-contact">
+        <h2>{{ t.contact }}</h2>
+        <div class="contact-links">
+          {% if profile.email != '' -%}
+            <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+          {%- endif %}
+          {% for link in profile.links -%}
+            <a href="{{ link.url }}" rel="me noopener">{{ link.label }}</a>
+          {%- endfor %}
+          {% if profile.cv != '' -%}
+            <a href="{{ profile.cv | relative_url }}">{{ t.cv }}</a>
+          {%- endif %}
+        </div>
+      </section>
+    {% endif %}
+    <section class="selected-research">
+      <div class="section-heading">
+        <h2>{{ t.selected_publications }}</h2>
+        <a href="{{ t.home | append: 'publications/' | relative_url }}">{{ t.all_publications }} →</a>
+      </div>
+      <div class="publications">{% bibliography --query @*[selected=true] %}</div>
+    </section>
+    {{ content }}
+  </div>
+</article>

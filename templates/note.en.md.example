@@ -1,0 +1,20 @@
+---
+layout: academic-entry
+title: Your note title
+description: A short summary.
+date: 2026-09-10
+lang: en
+section: notes
+permalink: /notes/your-note/
+alternate_url: /zh/notes/your-note/
+---
+
+Write your note in Markdown. Inline math: $E = mc^2$.
+
+$$
+Z = \operatorname{Tr} e^{-\beta H}
+$$
+
+```python
+print("Hello, physics!")
+```

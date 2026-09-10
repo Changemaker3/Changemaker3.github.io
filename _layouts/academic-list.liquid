@@ -1,0 +1,55 @@
+---
+layout: academic
+---
+{% assign locale = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[locale] %}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+  <div class="post-content">
+    {{ content }}
+    {% if page.section == 'publications' %}
+      {% capture bibliography %}{% bibliography %}{% endcapture %}
+      {% assign clean_bibliography = bibliography | strip_html | strip %}
+      {% if clean_bibliography != '' %}
+        <div class="publications">{{ bibliography }}</div>
+      {% else %}
+        <p class="empty-section">{{ t.no_publications }}</p>
+      {% endif %}
+    {% else %}
+      {% assign entries = site[page.section] | where: 'lang', locale | sort: 'date' | reverse %}
+      {% if entries.size > 0 %}
+        <ol class="entry-list">
+          {% for entry in entries %}
+            <li>
+              <h3>
+                <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
+              </h3>
+              <p class="entry-meta">
+                <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%Y.%m.%d' }}</time>
+                {%- if entry.venue %} · {{ entry.venue }}{% endif %}
+              </p>
+              {% if entry.description %}
+                <p class="entry-summary">{{ entry.description }}</p>
+              {% endif %}
+              {% if entry.slides or entry.video %}
+                <div class="entry-links">
+                  {% if entry.slides -%}
+                    <a href="{{ entry.slides | relative_url }}">{{ t.slides }}</a>
+                  {%- endif -%}
+                  {%- if entry.video -%}
+                    <a href="{{ entry.video }}">{{ t.video }}</a>
+                  {%- endif %}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        {% assign empty_key = 'no_' | append: page.section %}
+        <p class="empty-section">{{ t[empty_key] }}</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</article>

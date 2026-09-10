@@ -1,0 +1,15 @@
+---
+layout: academic-entry
+title: Your talk title
+description: A short abstract.
+date: 2026-09-10
+lang: en
+section: talks
+venue: Seminar or conference
+permalink: /talks/your-talk/
+alternate_url: /zh/talks/your-talk/
+# slides: /assets/pdf/your-slides.pdf
+# video: https://example.org/your-video
+---
+
+Write the abstract in Markdown.

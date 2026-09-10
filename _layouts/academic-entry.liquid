@@ -1,0 +1,28 @@
+---
+layout: academic
+---
+{% assign locale = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[locale] %}
+{% assign list_url = t.home | append: page.section | append: '/' %}
+{% assign back_key = 'back_' | append: page.section %}
+<article class="post">
+  <a class="back-link" href="{{ list_url | relative_url }}">← {{ t[back_key] }}</a>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="entry-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+      {%- if page.venue %} · {{ page.venue }}{% endif %}
+    </p>
+    {% if page.slides or page.video %}
+      <div class="entry-links">
+        {% if page.slides -%}
+          <a href="{{ page.slides | relative_url }}">{{ t.slides }}</a>
+        {%- endif -%}
+        {%- if page.video -%}
+          <a href="{{ page.video }}">{{ t.video }}</a>
+        {%- endif %}
+      </div>
+    {% endif %}
+  </header>
+  <div class="post-content">{{ content }}</div>
+</article>

@@ -1,0 +1,67 @@
+---
+en:
+  home: "/"
+  about: About
+  publications: Publications
+  talks: Talks
+  notes: Notes
+  switch_label: 中文
+  switch_title: 切换到中文
+  switch_lang: zh-CN
+  menu: Navigation
+  theme: Change color theme
+  skip: Skip to content
+  introduction: Personal website
+  welcome: Welcome to my personal website.
+  research: Research interests
+  contact: Contact
+  cv: Curriculum vitae
+  no_publications: Publications will be added here.
+  no_talks: Talks will be added here.
+  no_notes: Notes will be added here.
+  slides: Slides
+  video: Video
+  abstract: Abstract
+  back_talks: All talks
+  back_notes: All notes
+  updated: Updated
+  footer: Built with
+  not_found: Page not found
+  return_home: Return home
+  preprint: Preprint
+  selected_publications: Selected publications
+  all_publications: All publications
+  citation: Citation
+zh:
+  home: "/zh/"
+  about: 个人简介
+  publications: 学术成果
+  talks: 学术报告
+  notes: 笔记
+  switch_label: EN
+  switch_title: Switch to English
+  switch_lang: en
+  menu: 导航
+  theme: 切换明暗主题
+  skip: 跳转到正文
+  introduction: 个人主页
+  welcome: 欢迎来到我的个人网站。
+  research: 研究方向
+  contact: 联系方式
+  cv: 个人简历
+  no_publications: 学术成果将在这里更新。
+  no_talks: 学术报告将在这里更新。
+  no_notes: 笔记将在这里更新。
+  slides: 幻灯片
+  video: 视频
+  abstract: 摘要
+  back_talks: 全部报告
+  back_notes: 全部笔记
+  updated: 更新于
+  footer: 基于
+  not_found: 页面未找到
+  return_home: 返回首页
+  preprint: 预印本
+  selected_publications: 代表性成果
+  all_publications: 全部学术成果
+  citation: 引用

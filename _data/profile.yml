@@ -1,0 +1,38 @@
+---
+name: Jinghao Jin
+site_name: JinghaoJin
+name_zh: 靳京皓
+photo: ""
+email: 26110190045@m.fudan.edu.cn
+cv: ""
+links:
+  - label: GitHub
+    url: https://github.com/Changemaker3
+  - label: INSPIRE
+    url: https://inspirehep.net/authors/3196060
+  - label: ORCID
+    url: https://orcid.org/0009-0001-3833-9769
+en:
+  role: PhD Student in Physics
+  affiliation: Fudan University
+  affiliation_url: ""
+  biography: |
+    I am a PhD student in the Department of Physics at Fudan University. My interests lie in **condensed matter theory** and **high energy theory**, with a particular focus on **three-dimensional conformal field theories (CFTs)** and the **Ising model**.
+
+    I am interested in the connections between high energy descriptions and low energy effective theories, and in how ideas from quantum field theory help us understand critical phenomena and the universal behavior of many-body systems.
+  research_interests:
+    - Three-dimensional conformal field theories
+    - The Ising model and critical phenomena
+    - Connections between high energy and low energy theories
+zh:
+  role: 物理学博士研究生
+  affiliation: 复旦大学
+  affiliation_url: ""
+  biography: |
+    我是复旦大学物理学系的博士研究生，研究兴趣主要是**凝聚态理论**与**高能理论**，尤其关注**三维共形场论（CFT）**和 **Ising 模型**。
+
+    我希望理解高能描述与低能有效理论之间的联系，并探索量子场论的思想如何帮助我们认识临界现象以及多体系统中的普适行为。
+  research_interests:
+    - 三维共形场论
+    - Ising 模型与临界现象
+    - 高能理论与低能有效理论之间的联系

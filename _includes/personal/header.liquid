@@ -1,0 +1,41 @@
+<header class="personal-header">
+  <nav class="container personal-nav" aria-label="{{ t.menu }}">
+    <a class="personal-brand" href="{{ t.home | relative_url }}"><strong>Jinghao</strong>Jin</a>
+    <div class="personal-actions">
+      <a
+        class="language-switch"
+        href="{{ page.alternate_url | default: t.home | relative_url }}"
+        lang="{{ t.switch_lang }}"
+        hreflang="{{ t.switch_lang }}"
+        aria-label="{{ t.switch_title }}"
+        title="{{ t.switch_title }}"
+      >
+        {{- t.switch_label -}}
+      </a>
+      {% if site.enable_darkmode %}
+        <button id="light-toggle" type="button" class="personal-theme" aria-label="{{ t.theme }}" title="{{ t.theme }}">
+          <span id="light-toggle-system" aria-hidden="true">◐</span>
+          <span id="light-toggle-dark" aria-hidden="true">☾</span>
+          <span id="light-toggle-light" aria-hidden="true">☼</span>
+        </button>
+      {% endif %}
+    </div>
+    <ul class="personal-links">
+      {% assign sections = 'about,publications,talks,notes' | split: ',' %}
+      {% for section in sections %}
+        {% assign section_url = t.home %}
+        {% unless section == 'about' %}{% assign section_url = t.home | append: section | append: '/' %}{% endunless %}
+        <li>
+          <a
+            href="{{ section_url | relative_url }}"
+            {% if page.section == section %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- t[section] -}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,15 @@
+---
+layout: academic-entry
+title: 报告标题
+description: 报告的简短介绍。
+date: 2026-09-10
+lang: zh
+section: talks
+venue: 报告场合
+permalink: /zh/talks/your-talk/
+alternate_url: /talks/your-talk/
+# slides: /assets/pdf/your-slides.pdf
+# video: https://example.org/your-video
+---
+
+在这里填写中文报告摘要。
