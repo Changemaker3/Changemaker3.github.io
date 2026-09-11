@@ -68,7 +68,7 @@ analytics:
   openpanel:
   cloudflare:
 enable_simple_analytics: false
-google_site_verification:
+google_site_verification: "-yPmch_y2Wtn3dQorIVnqN59GRZxhWU9JrMKecSDyLE"
 bing_site_verification:
 blog_name: Notes
 blog_description: Notes by Jinghao Jin
@@ -288,7 +288,7 @@ imagemagick:
   output_formats:
     webp: "-auto-orient -quality 85"
 lazy_loading_images: true
-enable_google_verification: false
+enable_google_verification: true
 enable_bing_verification: false
 enable_cookie_consent: false
 enable_masonry: false
