@@ -1,0 +1,46 @@
+{% if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
+{% if page.section == 'about' %}
+  {% assign profile = site.data.profile %}
+  {% assign localized_profile = profile[locale] %}
+  {% assign profile_name = profile.name %}
+  {% if locale == 'zh' %}{% assign profile_name = profile.name_zh %}{% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": {{ '/#website' | absolute_url | jsonify }},
+          "url": {{ '/' | absolute_url | jsonify }},
+          "name": {{ profile.site_name | jsonify }},
+          "alternateName": {{ profile.name | jsonify }},
+          "inLanguage": ["en", "zh-CN"]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": {{ page.url | append: '#profile' | absolute_url | jsonify }},
+          "url": {{ page.url | absolute_url | jsonify }},
+          "name": {{ profile_name | jsonify }},
+          "description": {{ page.description | jsonify }},
+          "inLanguage": "{% if locale == 'zh' %}zh-CN{% else %}en{% endif %}",
+          "isPartOf": { "@id": {{ '/#website' | absolute_url | jsonify }} },
+          "mainEntity": {
+            "@type": "Person",
+            "@id": {{ '/#person' | absolute_url | jsonify }},
+            "name": {{ profile.name | jsonify }},
+            "alternateName": [{{ profile.name_zh | jsonify }}, {{ profile.site_name | jsonify }}],
+            "url": {{ '/' | absolute_url | jsonify }},
+            "jobTitle": {{ localized_profile.role | jsonify }},
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": {{ profile.en.affiliation | jsonify }},
+              "alternateName": {{ profile.zh.affiliation | jsonify }}
+            },
+            "knowsAbout": {{ localized_profile.research_interests | jsonify }},
+            "sameAs": {{ profile.links | map: 'url' | jsonify }}
+          }
+        }
+      ]
+    }
+  </script>
+{% endif %}

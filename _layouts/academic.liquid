@@ -4,10 +4,16 @@
 <html lang="{% if locale == 'zh' %}zh-CN{% else %}en{% endif %}">
   <head>
     {% include head.liquid %}
+    {% include personal/seo.liquid %}
     <link rel="stylesheet" href="{{ '/assets/css/personal.css' | relative_url }}">
     {% if page.alternate_url %}
       <link rel="alternate" hreflang="{% if locale == 'zh' %}en{% else %}zh-CN{% endif %}" href="{{ page.alternate_url | absolute_url }}">
       <link rel="alternate" hreflang="{% if locale == 'zh' %}zh-CN{% else %}en{% endif %}" href="{{ page.url | absolute_url }}">
+      {% if page.section %}
+        {% assign default_language_url = page.url %}
+        {% if locale == 'zh' %}{% assign default_language_url = page.alternate_url %}{% endif %}
+        <link rel="alternate" hreflang="x-default" href="{{ default_language_url | absolute_url }}">
+      {% endif %}
     {% endif %}
   </head>
   <body class="personal-site sticky-bottom-footer">
