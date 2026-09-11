@@ -203,6 +203,7 @@ jekyll-minifier:
   compress_css: false
   exclude:
     - robots.txt
+    - sitemap.xml
 terser:
   compress:
     drop_console: true
