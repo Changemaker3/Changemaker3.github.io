@@ -31,7 +31,7 @@ Output is in `dist/`. The site has no database. Content is stored in Markdown, Y
 - `_pages/personal/`: section pages and paired URLs.
 - `_layouts/academic*.liquid`, `_layouts/personal-bib.liquid`, `_includes/personal/`: custom site layouts composing al-folio's official head, scripts, and theme styles.
 - `assets/css/personal.css`: the small personal style layer.
-- `.openai/hosting.json`: Sites identifier and static output configuration. No secrets belong in this file.
+- `.github/workflows/pages.yml`: builds the site and deploys `dist/` to GitHub Pages on every push to `main`.
 
 Talks and Notes are deliberately empty until Jinghao supplies content. No portrait is shown until one is supplied.
 

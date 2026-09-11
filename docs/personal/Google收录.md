@@ -16,7 +16,7 @@
 ## 在自己的 Google 账号下验证网站
 
 1. 打开 https://search.google.com/search-console ，登录你的 Google 账号。
-2. 添加资源，选择「网址前缀 / URL prefix」，填写完整网址 `https://jinghaojin.jinjinghao992324.chatgpt.site/`。这个子域名无需使用 DNS 验证。
+2. 添加资源，选择「网址前缀 / URL prefix」，填写完整网址 `https://changemaker3.github.io/`。GitHub Pages 无法使用 DNS 验证，请使用「HTML 标记」验证方式。
 3. 在其他验证方式中选「HTML 标记 / HTML tag」，复制 Google 提供的整段 `<meta name="google-site-verification" content="…">`。
 4. 将 `content` 内的真实值填入 `_config.yml` 的 `google_site_verification`，同时将 `enable_google_verification` 设为 `true`。也可以把整段标签发给本项目的助手代为添加。无需提供 Google 密码或登录验证码。
 5. 构建并发布网站更新。只修改本地文件不会让 Google 看到标签。
@@ -30,17 +30,13 @@
 4. 用「网页索引」报告和「网址检查」跟进状态。Google 表示抓取可能需要几天到几周，请求不保证一定收录。
 5. 在你自己的 GitHub、ORCID、INSPIRE 等主页中添加个人网站链接，让读者和搜索引擎有入口可以发现网站。
 
-## 遇到 “Sorry, you have been blocked”
+## 托管平台
 
-这表示请求被托管平台的安全服务拦截。更改页面关键词、robots.txt 或公开权限无法直接解除平台拦截。需要根据拦截页底部的 Ray ID、发生时间、网址和使用的网络，由平台支持方检查规则。不要把访问令牌当作给 Google 的抓取入口。
-
-本项目的检查曾出现：带普通浏览器标识的未登录请求返回正常页面，而其他请求返回 403。这个结果只能说明访问因请求环境而异，不能证明 Googlebot 的真实访问结果，也不能确定手机被拦截的具体原因。以 Search Console 的「测试实际网址」为准。
-
-如果平台无法解决面向目标读者的访问问题，可将现有静态网站迁移到其他托管服务。确定新地址后，统一更新 `_config.yml` 的 `url`、canonical、站点地图、个人资料中的外部链接，并在新地址下重新验证 Search Console。托管迁移本身不保证 Google 收录或所有地区的连通性。
+网站现在通过 GitHub Pages 发布，地址为 `https://changemaker3.github.io/`，源代码在 `https://github.com/Changemaker3/Changemaker3.github.io`。向 `main` 分支推送后，GitHub Actions 会自动构建并部署。GitHub Pages 由 GitHub 直接提供，普通浏览器和搜索引擎都可以访问，之前托管平台的访问拦截问题不再适用。
 
 ## 官方资料
 
 - Google：请求重新抓取 https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
 - Google：验证网站所有权 https://support.google.com/webmasters/answer/9008080
 - Google：个人资料结构化数据 https://developers.google.com/search/docs/appearance/structured-data/profile-page
-- Cloudflare：403 错误 https://developers.cloudflare.com/support/troubleshooting/http-status-codes/4xx-client-error/error-403/
+- GitHub Pages 文档 https://docs.github.com/pages
